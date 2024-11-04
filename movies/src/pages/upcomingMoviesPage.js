@@ -19,10 +19,6 @@ const UpcomingMoviesPage = (props) => {
 
     const movies = data.results;
 
-    //const favourites = movies.filter(m => m.favourite)
-    
-    //const addToFavourites = (movieId) => true;
-
     return (
         <PageTemplate 
             title='Upcoming Movies'
