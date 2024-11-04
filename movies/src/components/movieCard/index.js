@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavouriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import IconButton from "@mui/material/IconButton";
@@ -27,9 +27,9 @@ export default function MovieCard(props) {
         <Card>
             <CardHeader
                 avatar={
-                    movie.favorite ? (
+                    movie.favourite ? (
                         <Avatar sx={{ backgroundColor: 'red' }}>
-                            <FavoriteIcon />
+                            <FavouriteIcon />
                         </Avatar>
                     ) : null
                 }
@@ -65,8 +65,8 @@ export default function MovieCard(props) {
                 </Grid>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favourites" onclick={handleAddToFavourite}>
-                    <FavoriteIcon color="primary" fontSize="large" />
+                <IconButton aria-label="add to favourites" onClick={handleAddToFavourite}>
+                    <FavouriteIcon color="primary" fontSize="large" />
                 </IconButton>
                 <Link to={`/movies/${movie.id}`}>
                     <Button variant="outlined" size="medium" color="primary">
