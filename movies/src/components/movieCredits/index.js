@@ -9,6 +9,8 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const MovieCredits = ({ credits }) => {
 
@@ -17,13 +19,15 @@ const MovieCredits = ({ credits }) => {
         justifyContent: "center",
         flexWrap: "wrap",
         listStyle: "none",
-        
+
         padding: 1.5,
         margin: 0,
     };
-    const chip = { 
+    const chip = {
         margin: 0.5,
     };
+
+    const navigate = useNavigate();
 
     return (
         <>
@@ -41,7 +45,7 @@ const MovieCredits = ({ credits }) => {
             >
                 {credits.cast.map((castMember) => (
                     <li>
-                        <Chip label={`${castMember.name} as ${castMember.character}`} sx={{...chip}}/>
+                        <Chip label={`${castMember.name} as ${castMember.character}`} sx={{ ...chip }} />
                     </li>
                 ))}
             </Paper>
@@ -55,10 +59,13 @@ const MovieCredits = ({ credits }) => {
             >
                 {credits.crew.map((crewMember) => (
                     <li>
-                        <Chip label={`${crewMember.name}: ${crewMember.job}`} sx={{...chip}} />
+                        <Chip label={`${crewMember.name}: ${crewMember.job}`} sx={{ ...chip }} />
                     </li>
                 ))}
             </Paper>
+            <Button variant="outlined" size="medium" color="primary" onClick={() => navigate(-1)}>
+                Back to Movie Details
+            </Button>
         </>
     );
 };

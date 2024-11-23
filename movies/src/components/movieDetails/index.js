@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 
 const root = {
@@ -83,9 +84,10 @@ const MovieDetails = ({ movie }) => {
             movie: movie,
           }}
         >
-          <li>
-            <Chip label="Credits" sx={{ ...chip }} color="primary" />
-          </li>
+
+          <Button variant="outlined" size="medium" color="primary">
+            Credits
+          </Button>
         </Link>
       </Paper>
       <Fab
