@@ -9,6 +9,7 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
+import { Link } from "react-router-dom";
 
 
 const root = {
@@ -71,6 +72,21 @@ const MovieDetails = ({ movie }) => {
             <Chip label={c.name} sx={{ ...chip }} />
           </li>
         ))}
+      </Paper>
+      <Paper
+        component="ul"
+        sx={{ ...root }}
+      >
+        <Link
+          to={`/movies/${movie.id}/credits`}
+          state={{
+            movie: movie,
+          }}
+        >
+          <li>
+            <Chip label="Credits" sx={{ ...chip }} color="primary" />
+          </li>
+        </Link>
       </Paper>
       <Fab
         color="secondary"

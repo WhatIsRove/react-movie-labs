@@ -11,7 +11,6 @@ export default function CircularInterminate() {
             }
         }}>
             <CircularProgress />
-            <CircularProgress />
         </div>
     )
 }
