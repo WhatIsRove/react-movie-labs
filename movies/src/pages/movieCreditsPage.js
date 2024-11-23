@@ -34,7 +34,7 @@ const MovieCreditsPage = (props) => {
                     </PageTemplate>
                 </>
             ) : (
-                <h2>Waiting for movie details</h2>
+                <h2>Waiting for movie credits</h2>
             )}
         </>
     );

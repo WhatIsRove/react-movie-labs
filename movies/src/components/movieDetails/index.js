@@ -78,6 +78,20 @@ const MovieDetails = ({ movie }) => {
         component="ul"
         sx={{ ...root }}
       >
+        <li>
+          <Link
+            to={`/movies/${movie.id}/recommendations`}
+            state={{
+              movie: movie,
+            }}
+          >
+
+            <Button variant="outlined" size="medium" color="primary">
+              Recommendations
+            </Button>
+          </Link>
+        </li>
+        <li>
         <Link
           to={`/movies/${movie.id}/credits`}
           state={{
@@ -89,6 +103,7 @@ const MovieDetails = ({ movie }) => {
             Credits
           </Button>
         </Link>
+        </li>
       </Paper>
       <Fab
         color="secondary"
