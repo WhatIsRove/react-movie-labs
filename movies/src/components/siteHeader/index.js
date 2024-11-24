@@ -37,7 +37,10 @@ const SiteHeader = ({ history }) => {
 
   const languageOptions = [
     { label: "EN", option: "en-US" },
-    { label: "FR", option: "fr-FR" }
+    { label: "FR", option: "fr-FR" },
+    { label: "DE", option: "de-DE" },
+    { label: "JP", option: "ja-JP" },
+    { label: "RU", option: "ru-RU" }
   ]
 
 
