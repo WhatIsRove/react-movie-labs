@@ -31,8 +31,8 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <SiteHeader />
         <MoviesContextProvider>
+        <SiteHeader />
           <Routes>
             <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
             <Route path="/movies/watchlist" element={<WatchlistMoviesPage />} />

@@ -6,6 +6,7 @@ const MoviesContextProvider = (props) => {
     const [favourites, setFavourites] = useState ([])
     const [myReviews, setMyReviews] = useState ([])
     const [mustWatch, setMustWatch] = useState ([])
+    const [language, setLanguage] = useState ("en-US")
 
     const addToFavourites = (movie) => {
         let newFavourites = [];
@@ -48,11 +49,13 @@ const MoviesContextProvider = (props) => {
             value={{
                 favourites,
                 mustWatch,
+                language,
                 addToFavourites,
                 removeFromFavourites,
                 addReview,
                 addToPlaylist,
-                removeFromWatchlist
+                removeFromWatchlist,
+                setLanguage,
             }}
         >
             {props.children}

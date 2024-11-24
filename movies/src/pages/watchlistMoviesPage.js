@@ -8,12 +8,12 @@ import RemoveFromWatchlist from "../components/cardIcons/removeFromWatchlist";
 import AddToFavouritesIcon from "../components/cardIcons/addToFavourites";
 
 const WatchlistMoviesPage = () => {
-    const {mustWatch: movieIds } = useContext(MoviesContext)
+    const {mustWatch: movieIds, language } = useContext(MoviesContext)
 
     const watchlistMoviesQueries = useQueries(
         movieIds.map((movieId) => {
             return {
-                queryKey: ["movie", {id : movieId}],
+                queryKey: ["movie", {id : movieId}, {language: language}],
                 queryFn: getMovie
             }
         })

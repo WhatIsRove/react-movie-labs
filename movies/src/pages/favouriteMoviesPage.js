@@ -8,12 +8,12 @@ import RemoveFromFavourites from "../components/cardIcons/removeFromFavourites";
 import WriteReview from "../components/cardIcons/writeReview";
 
 const FavouriteMoviesPage = () => {
-    const {favourites: movieIds } = useContext(MoviesContext)
+    const {favourites: movieIds, language} = useContext(MoviesContext)
 
     const favouriteMovieQueries = useQueries(
         movieIds.map((movieId) => {
             return {
-                queryKey: ["movie", {id : movieId}],
+                queryKey: ["movie", {id : movieId}, {language: language}],
                 queryFn: getMovie
             }
         })

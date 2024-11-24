@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PageTemplate from '../components/templateMovieListPage'
 import { getMovies } from "../api/tmdb-api"
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner"
 import AddToFavouritesIcon from "../components/cardIcons/addToFavourites";
 import { Pagination } from "@mui/material";
+import { MoviesContext } from "../contexts/moviesContext";
 
 const HomePage = (props) => {
-
-    const { data, error, isLoading, isError } = useQuery('discover', getMovies);
+    const {language} = useContext(MoviesContext)
+    const { data, error, isLoading, isError } = useQuery(['discover', {language: language}], getMovies);
 
     if (isLoading) {
         return <Spinner />
